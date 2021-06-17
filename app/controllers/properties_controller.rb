@@ -13,7 +13,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    @property.stations.build
+    2.times { @property.stations.build }
   end
 
   # GET /properties/1/edit
