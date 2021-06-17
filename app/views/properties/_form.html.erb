@@ -14,6 +14,21 @@
     <%= form.label :name, "物件名" %>
     <%= form.text_field :name %>
   </div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.label :rent, "賃料" %>
+    <%= form.text_field :rent %><span> 円</span>
   </div>
+  <div class="actions">
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address %>
+  </div>
+  <div class="actions">
+    <%= form.label :age, "築年数" %>
+    <%= form.text_field :age %><span> 年</span>
+  </div>
+  <div class="actions">
+    <%= form.label :notes, "備考" %>
+    <%= form.text_area :notes %>
+  </div>
+    <%= form.submit %>
 <% end %>
