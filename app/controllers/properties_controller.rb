@@ -1,6 +1,5 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy ]
-
   # GET /properties or /properties.json
   def index
     @properties = Property.all
@@ -13,13 +12,14 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    @property.stations.build
+    2.times{ @property.stations.build }
   end
 
   # GET /properties/1/edit
   def edit
-    @station = Station.new
-    @station.property_id = @property.id
+    unless @property.stations.where(line:"",name:"",time:"").exists?
+    @station = @property.stations.build
+  end
   end
 
   # POST /properties or /properties.json
