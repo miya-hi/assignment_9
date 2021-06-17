@@ -1,3 +1,3 @@
 class Station < ApplicationRecord
-  belongs_to :parent
+  belongs_to :property
 end

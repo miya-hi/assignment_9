@@ -13,7 +13,8 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    @property.build_station
+    @property.stations.build
+    @property.stations.build
   end
 
   # GET /properties/1/edit
@@ -66,7 +67,7 @@ class PropertiesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def property_params
       params.fetch(:property, {}).permit(:name, :rent, :address, :age, :notes,
-      station_attributes: [:id, :line, :name, :time]
+      stations_attributes: [:id, :line, :name, :time]
     )
     end
 end
