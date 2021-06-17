@@ -13,11 +13,13 @@ class PropertiesController < ApplicationController
   # GET /properties/new
   def new
     @property = Property.new
-    2.times { @property.stations.build }
+    @property.stations.build
   end
 
   # GET /properties/1/edit
   def edit
+    @station = Station.new
+    @station.property_id = @property.id
   end
 
   # POST /properties or /properties.json

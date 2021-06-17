@@ -2,5 +2,24 @@
 
 <%= render 'form', property: @property %>
 
+  <%= form_with(model: @station, local: true, url: property_path, method: :patch) do |station_form| %>
+    <h3>最寄り駅<%#= station_form.index + 1 %></h3>
+    <div class="field">
+      <%= station_form.label :line, "路線名" %>
+      <%= station_form.text_field :line %>
+    </div>
+    <div class="field">
+      <%= station_form.label :name, "駅名" %>
+      <%= station_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= station_form.label :time, "徒歩分数" %>
+      <%= station_form.text_field :time %><span> 分</span>
+    </div>
+  <div class="actions">
+    <%= station_form.submit "登録する" %>
+  </div>
+<% end %>
+
 <%= link_to 'Show', @property %> |
 <%= link_to 'Back', properties_path %>
