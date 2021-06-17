@@ -14,7 +14,6 @@ class PropertiesController < ApplicationController
   def new
     @property = Property.new
     @property.stations.build
-    @property.stations.build
   end
 
   # GET /properties/1/edit
